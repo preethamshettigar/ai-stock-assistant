@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  /* Streamlit core background and text colors */
+  background: #0E1117;
+  color: #FAFAFA;
+  font-family: Arial, sans-serif;
+}
+
+button, textarea, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  padding: 28px 20px;
+  /* Streamlit secondary background and subtle border */
+  background: #262730;
+  border-right: 1px solid #464855;
+}
+
+.brand {
+  /* Streamlit primary brand accent */
+  color: #FF4B4B;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.muted {
+  /* Streamlit muted/disabled text shade */
+  color: #A3A8B4;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.mode-list {
+  display: grid;
+  gap: 8px;
+  margin: 28px 0;
+}
+
+.mode {
+  border: 1px solid #464855;
+  background: transparent;
+  color: #FAFAFA;
+  border-radius: 10px;
+  padding: 11px 12px;
+  text-align: left;
+}
+
+.mode.active {
+  /* Blends Streamlit primary and secondary selections */
+  background: #31333F;
+  border-color: #FF4B4B;
+  color: white;
+}
+
+.upload-box {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 12px;
+  border: 1px dashed #464855;
+  border-radius: 10px;
+}
+
+.upload-box input {
+  max-width: 100%;
+  color: #FAFAFA;
+  font-size: 12px;
+}
+
+.main {
+  width: min(960px, 100%);
+  margin: 0 auto;
+  padding: 34px 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #464855;
+  padding-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 25px;
+  margin: 0;
+}
+
+.messages {
+  flex: 1;
+  padding: 28px 0;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.message {
+  max-width: 85%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.message.user {
+  justify-self: end;
+  /* Uses light dark theme variant for user blocks */
+  background: #262730;
+  border: 1px solid #464855;
+}
+
+.message.assistant {
+  justify-self: start;
+  /* Clean contrast for assistant responses */
+  background: #1A1D24;
+  border: 1px solid #31333F;
+}
+
+.speak-button {
+  display: block;
+  margin-top: 12px;
+  padding: 6px 9px;
+  border: 1px solid #464855;
+  border-radius: 7px;
+  background: #262730;
+  color: #FAFAFA;
+  font-size: 12px;
+}
+
+.composer {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #464855;
+  padding-top: 18px;
+}
+
+.composer textarea {
+  flex: 1;
+  min-height: 52px;
+  resize: vertical;
+  background: #0E1117;
+  border: 1px solid #464855;
+  color: white;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.primary, .secondary {
+  border: 0;
+  border-radius: 10px;
+  padding: 0 16px;
+  color: #FFFFFF;
+  background: #FF4B4B;
+  font-weight: 700;
+}
+
+.secondary {
+  background: #31333F;
+  color: #FAFAFA;
+  border: 1px solid #464855;
+}
+
+.error {
+  /* Streamlit core error red variant */
+  color: #FF2B2B;
+  margin: 8px 0;
+}
+
+.voice-help {
+  margin: 8px 0 0;
+}
+
+.empty-state {
+  margin: 80px auto;
+  max-width: 520px;
+  padding: 28px;
+  text-align: center;
+  border: 1px solid #464855;
+  border-radius: 14px;
+  background: #262730;
+}
+
+.empty-state h2 {
+  margin-top: 0;
+  color: #FF4B4B;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #464855;
+  }
+
+  .mode-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main {
+    padding: 22px 15px;
+  }
+  .markdown-content {
+  overflow-wrap: anywhere;
+}
+
+.markdown-content p {
+  margin: 0 0 12px;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  color: #9ee6b0;
+  margin: 18px 0 8px;
+  line-height: 1.25;
+}
+
+.markdown-content h1:first-child,
+.markdown-content h2:first-child,
+.markdown-content h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 8px 0 14px 22px;
+  padding: 0;
+}
+
+.markdown-content li {
+  margin: 5px 0;
+}
+
+.markdown-content strong {
+  color: #ffffff;
+}
+
+.markdown-content code {
+  background: #0a1728;
+  border-radius: 4px;
+  padding: 2px 5px;
+  color: #b7f5c3;
+}
+
+.markdown-content pre {
+  overflow-x: auto;
+  background: #0a1728;
+  border: 1px solid #25415d;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #54d889;
+  margin: 10px 0;
+  padding-left: 12px;
+  color: #b5c7d9;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
+
+}
+
+
